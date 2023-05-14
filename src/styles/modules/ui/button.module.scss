@@ -1,0 +1,22 @@
+@use '../../base';
+
+.btn {
+    padding: 6px 8px;
+    color: base.$altTextColor;
+    border: none;
+    border-radius: base.$borderRadiusMain;
+    outline: none;
+    font-family: 'Roboto Mono';
+    font-weight: 300;
+    font-size: 18px;
+    cursor: pointer;
+
+}
+
+.btnMain {
+    background-color: base.$indigoFlowerGrey;
+}
+
+.btnAlt {
+    background-color: base.$plumGrey;
+}
