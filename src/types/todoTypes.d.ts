@@ -22,6 +22,7 @@ export interface ITodoItemProps extends ITodoItemInteractions {
 }
 
 export interface IButtonProps {
-    children: string;
-    main?: boolean;
+    children: React.ReactNode;
+    onClick?: () => void
+    main?: 1 | 0;
 }

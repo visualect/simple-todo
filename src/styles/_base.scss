@@ -9,4 +9,8 @@ $altTextColor: white;
 $indigoFlowerGrey: #4D80E6;
 $plumGrey: #C099A0;
 $whitePlumGrey: #E5E4E6;
-$borderRadiusMain: 5px
+$borderRadiusMain: 2px;
+
+* {
+    box-sizing: border-box;
+}

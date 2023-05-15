@@ -1,2 +1,9 @@
 @use '../base';
 
+.form {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    margin-bottom: 100px;
+}
