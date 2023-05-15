@@ -1,7 +1,12 @@
-import classes from '../../styles/modules/ui/input.module.scss'
+import classes from "../../styles/modules/ui/input.module.scss";
+import { forwardRef } from "react";
 
-export default function Input(props: React.InputHTMLAttributes<HTMLInputElement>) {
-    return (
-        <input {...props} className={classes.input} type="text" />
-    )
-} 
+// TODO: fix type errors
+
+const Input = forwardRef(
+  (props: InputHTMLAttributes<HTMLInputElement>, ref: HTMLInputElement) => {
+    return <input {...props} className={classes.input} type="text" ref={ref} />;
+  }
+);
+
+export default Input;

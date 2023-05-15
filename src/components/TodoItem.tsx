@@ -1,13 +1,15 @@
+import { useContext } from "react";
 import { ITodoItemProps } from "../types/todoTypes";
 import Button from "./ui/Button";
 import classes from "../styles/modules/item.module.scss";
 import { motion } from "framer-motion";
+import { TodoContext } from "../App";
 
-export default function TodoItem({
-  item,
-  removeItem,
-  toggleItem,
-}: ITodoItemProps) {
+export default function TodoItem({ item }: ITodoItemProps) {
+  // TODO: extract removeItem and handleToggle functions using useContext
+
+  const { deleteItem: removeItem, toggleItem } = useContext(TodoContext);
+
   const handleDelete = (id: string) => {
     removeItem(id);
   };

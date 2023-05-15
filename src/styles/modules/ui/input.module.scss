@@ -11,3 +11,7 @@
     color: base.$mainTextColor;
     border: none;
 }
+
+.input:focus {
+    outline: 1px solid rgb(168, 168, 168);
+}
