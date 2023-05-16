@@ -1,10 +1,13 @@
 import classes from "../../styles/modules/ui/input.module.scss";
 import { forwardRef } from "react";
 
-// TODO: fix type errors
+interface IInputProps {
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
 
 const Input = forwardRef(
-  (props: InputHTMLAttributes<HTMLInputElement>, ref: HTMLInputElement) => {
+  (props: IInputProps, ref: React.LegacyRef<HTMLInputElement>) => {
     return <input {...props} className={classes.input} type="text" ref={ref} />;
   }
 );

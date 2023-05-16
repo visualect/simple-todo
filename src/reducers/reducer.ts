@@ -13,7 +13,6 @@ export default function reducer(
     case "toggleItem":
       return state.map((item) => {
         if (item.id === action.id) {
-          //   item.completed = !item.completed; // WRONG!!!
           return {
             ...item,
             completed: !item.completed,
