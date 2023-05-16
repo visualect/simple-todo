@@ -32,7 +32,7 @@ export default function TodoForm() {
 
   return (
     <form onSubmit={handleSubmit} className={classes.form}>
-      <Input type="text" value={value} onChange={handleChange} ref={inputRef} />
+      <Input value={value} onChange={handleChange} ref={inputRef} />
       <Button>Add</Button>
     </form>
   );
