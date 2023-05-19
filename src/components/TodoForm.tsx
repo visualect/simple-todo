@@ -1,10 +1,12 @@
-import { useState, useContext, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import classes from "../styles/modules/form.module.scss";
 import Button from "./ui/Button";
 import Input from "./ui/Input";
-import { TodoContext } from "../App";
+import { useDispatch } from "react-redux";
+import { addItem } from "../redux/todoSlice";
 
 export default function TodoForm() {
+  const dispatch = useDispatch();
   const [value, setValue] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -16,16 +18,14 @@ export default function TodoForm() {
     setValue(e.target.value);
   };
 
-  const { addItem } = useContext(TodoContext);
-
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (value) {
-      addItem({
-        id: self.crypto.randomUUID(),
-        title: value,
-        completed: false,
-      });
+      dispatch(
+        addItem({
+          title: value,
+        })
+      );
     }
     setValue("");
   };

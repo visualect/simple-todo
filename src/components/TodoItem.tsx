@@ -1,21 +1,27 @@
-import { useContext } from "react";
 import { ITodoItemProps } from "../types/todoTypes";
 import Button from "./ui/Button";
 import classes from "../styles/modules/item.module.scss";
 import { motion } from "framer-motion";
-import { TodoContext } from "../App";
+import { toggleItem, deleteItem } from "../redux/todoSlice";
+import { useAppDispatch } from "../redux/hooks";
 
 export default function TodoItem({ item }: ITodoItemProps) {
-  // TODO: extract removeItem and handleToggle functions using useContext
-
-  const { deleteItem: removeItem, toggleItem } = useContext(TodoContext);
+  const dispatch = useAppDispatch();
 
   const handleDelete = (id: string) => {
-    removeItem(id);
+    dispatch(
+      deleteItem({
+        id,
+      })
+    );
   };
 
   const handleToggle = (id: string) => {
-    toggleItem(id);
+    dispatch(
+      toggleItem({
+        id,
+      })
+    );
   };
 
   return (
